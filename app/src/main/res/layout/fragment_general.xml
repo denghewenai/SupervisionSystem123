@@ -2,33 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp">
-
-<android.support.design.widget.TextInputLayout
-    android:id="@+id/id_school"
-    android:layout_width="match_parent"
-    android:layout_height="72dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="8dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
     >
 
-    <EditText
+    <ListView
+        android:id="@+id/id_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="16sp"
-        android:paddingTop="8dp"
-        android:paddingLeft="16dp"
-        android:paddingBottom="8dp"
-        android:text="校区"
-        android:inputType="none"
-        android:editable="false"
-        android:drawableEnd="@drawable/icon_edittext_drop"
-        android:drawableRight="@drawable/icon_edittext_drop"
-        android:textColorHint="#99ffffff"/>
-
-</android.support.design.widget.TextInputLayout>
+        android:clipToPadding="false"
+        android:divider="@null"
+        android:listSelector="?attr/selectableItemBackgroundBorderless"
+        />
 
 </LinearLayout>
