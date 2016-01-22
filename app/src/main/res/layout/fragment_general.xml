@@ -5,11 +5,12 @@
     >
 
     <ListView
-        android:id="@+id/id_lv"
+        android:id="@+id/id_lv_general"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:divider="@null"
+        android:descendantFocusability="afterDescendants"
         android:listSelector="?attr/selectableItemBackgroundBorderless"
         />
 
