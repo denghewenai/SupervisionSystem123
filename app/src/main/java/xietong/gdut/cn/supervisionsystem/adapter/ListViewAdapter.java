@@ -23,9 +23,10 @@ public class ListViewAdapter extends BaseAdapter{
     private List<InputBean> mDatas;
 
     public ListViewAdapter( Context context, List<InputBean> datas) {
-        mInflater = LayoutInflater.from(mContext);
+
         this.mContext = context;
         this.mDatas = datas;
+        mInflater = LayoutInflater.from(mContext);
     }
 
     @Override
@@ -45,7 +46,7 @@ public class ListViewAdapter extends BaseAdapter{
 
     @Override
     public int getViewTypeCount() {
-        return 4;
+        return 3;
     }
 
     @Override
@@ -55,31 +56,46 @@ public class ListViewAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
+
+        ViewHolder holder = null;
         if(convertView == null){
             switch (getItemViewType(position)){
 
                 case InputBean.TYPE_WITHICON:
                     holder = new ViewHolder();
                     convertView = mInflater.inflate(R.layout.listitem_withicon,null);
-                    holder.hint = (TextInputLayout) convertView.findViewById(R.id.id_school);
-                    holder.editText = (EditText) convertView.findViewById(R.id.id_schoolContent);
+                    holder.hint = (TextInputLayout) convertView.findViewById(R.id.id_inputLayout_withIcon);
+                    holder.editText = (EditText) convertView.findViewById(R.id.id_editText_withIcon);
                     break;
                 case InputBean.TYPE_SEPARATOR:
+                    holder = new ViewHolder();
+                    convertView = mInflater.inflate(R.layout.listitem_separator,null);
+                    holder.view = convertView.findViewById(R.id.id_separator);
                     break;
                 case InputBean.TYPE_JUSTEDIT:
-                    break;
-                case InputBean.TYPE_NUMBER:
+                    holder = new ViewHolder();
+                    convertView = mInflater.inflate(R.layout.listitem_justedit,null);
+                    holder.hint = (TextInputLayout) convertView.findViewById(R.id.id_inputLayout_justEdit);
+                    holder.editText = (EditText) convertView.findViewById(R.id.id_editText_justEdit);
                     break;
             }
+            convertView.setTag(holder);
         }
-        return null;
+        else {
+            holder = (ViewHolder)convertView.getTag();
+        }
+
+        if(holder.editText != null){
+            holder.hint.setHint(mDatas.get(position).getName());
+        }
+        return convertView;
     }
 
     public final class ViewHolder{
 
         public TextInputLayout hint;
         public EditText editText;
+        public View view;
 
     }
 

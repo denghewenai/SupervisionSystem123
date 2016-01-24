@@ -7,8 +7,7 @@ public class InputBean {
 
     public static final int TYPE_WITHICON = 0;
     public static final int TYPE_SEPARATOR = 1;
-    public static final int TYPE_NUMBER = 2;
-    public static final int TYPE_JUSTEDIT = 3;
+    public static final int TYPE_JUSTEDIT = 2;
     public static final int TYPE_TEXT=4;
 
 
