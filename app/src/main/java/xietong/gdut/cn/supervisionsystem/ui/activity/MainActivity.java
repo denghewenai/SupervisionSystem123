@@ -108,6 +108,8 @@ public class MainActivity extends BaseActivity {
                         }
                         swichContent(nowFragment,queryFragment);
                         break;
+                    case "设置":
+                        startAnimActivity(SetActivity.class);
                 }
 
                 mDrawerLayout.closeDrawers();

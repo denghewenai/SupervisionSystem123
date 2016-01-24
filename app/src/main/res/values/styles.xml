@@ -1,13 +1,13 @@
 <resources>
 
-        <style name="Theme.AppTheme" parent="Base.Theme">
+        <style name="AppTheme" parent="Base.Theme">
 
         </style>
 
         <style name="Base.Theme" parent="Theme.AppCompat.NoActionBar">
             <!-- Customize your theme here. -->
 
-            <item name="android:windowBackground">@android:color/white</item>
+            <item name="android:windowBackground">@color/material_blue_100</item>
 
             <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
 
